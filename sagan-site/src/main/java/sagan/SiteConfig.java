@@ -55,8 +55,8 @@ public class SiteConfig {
                     (org.apache.tomcat.jdbc.pool.DataSource) dataSource;
             return new AbstractHealthIndicator() {
                 @Override
-                protected void doHealthCheck(Health health) throws Exception {
-                    health.up().withDetail("active", tcDataSource.getActive())
+                protected Health doHealthCheck() throws Exception {
+                    return Health.up().withDetail("active", tcDataSource.getActive())
                             .withDetail("max_active", tcDataSource.getMaxActive())
                             .withDetail("idle", tcDataSource.getIdle())
                             .withDetail("max_idle", tcDataSource.getMaxIdle())
