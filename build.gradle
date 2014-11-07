@@ -9,11 +9,13 @@ buildscript {
     ext.springRepo = 'http://repo.spring.io/libs-release'
 
     repositories {
+        mavenLocal()
+        mavenCentral()
         maven { url springRepo }
     }
 
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.1.9.RELEASE"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT"
         classpath 'org.cloudfoundry:cf-gradle-plugin:1.0.4' // see deploy.gradle
     }
 }
@@ -55,6 +57,8 @@ configure(javaProjects) {
     sourceCompatibility = vJavaLang
 
     repositories {
+        mavenLocal()
+        mavenCentral()
         maven { url springRepo }
     }
 
@@ -96,7 +100,6 @@ configure(bootProjects) {
     bootRun.dependsOn writeGitPropertiesFile
 
     dependencies {
-        versionManagement 'io.spring.platform:platform-versions:1.0.3.RELEASE@properties'
     }
 }
 

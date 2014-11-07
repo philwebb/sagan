@@ -34,7 +34,6 @@ public class IndexerConfigTests {
 
         IndexerConfig configuration = context.getBean(IndexerConfig.class);
         assertNotNull(configuration);
-        context.close();
     }
 
 }

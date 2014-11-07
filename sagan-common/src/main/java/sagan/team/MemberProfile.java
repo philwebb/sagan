@@ -336,7 +336,7 @@ public class MemberProfile {
         result = 31 * result + (avatarUrl != null ? avatarUrl.hashCode() : 0);
         result = 31 * result + (gravatarEmail != null ? gravatarEmail.hashCode() : 0);
         result = 31 * result + (githubUsername != null ? githubUsername.hashCode() : 0);
-        result = 31 * result + username.hashCode();
+        result = 31 * result + (username != null ? username.hashCode() : 0);
         result = 31 * result + (speakerdeckUsername != null ? speakerdeckUsername.hashCode() : 0);
         result = 31 * result + (twitterUsername != null ? twitterUsername.hashCode() : 0);
         result = 31 * result + (lanyrdUsername != null ? lanyrdUsername.hashCode() : 0);
